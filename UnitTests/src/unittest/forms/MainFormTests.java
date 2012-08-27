@@ -8,6 +8,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import uxForms.MainPanel;
+
 public class MainFormTests {
 
 	@BeforeClass
@@ -28,7 +30,18 @@ public class MainFormTests {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		MainPanel panel = new MainPanel();
+	    assertEquals(panel.textField.getText(), "");
+		
 	}
+	
+	@Test
+	public void test2() {
+		MainPanel panel = new MainPanel();
+		panel.btnNewButton.doClick();
+		
+		assertEquals(panel.textField.getText(), "hello world");
+	}
+	
 
 }
